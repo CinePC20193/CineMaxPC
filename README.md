@@ -1,0 +1,2 @@
+# CineMaxPC
+Proyecto CineMax
