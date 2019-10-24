@@ -31,4 +31,3 @@ struct Funcion
     char * nombrePelicula;
     Horario * horas;
 };
-hola
