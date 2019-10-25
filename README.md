@@ -29,8 +29,8 @@ struct Funcion
 template <typename T>
 struct Nodo
 {
-    T funcion; //El tipo de información que tendría el catalogo sería las funciones que tiene el cine 
-    Nodo <T> * sigFuncion; //Opuntador a la sig. función 
+    T informacion;
+    Nodo <T> * siguiente; 
 };
     
 template <typeName T>
