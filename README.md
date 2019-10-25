@@ -1,5 +1,5 @@
 # CineMaxPC
-Proyecto CineMax
+//Proyecto CineMax
 
 #include <iostream>
 
