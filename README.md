@@ -26,14 +26,16 @@ struct Funcion
     Sala *** horarioSemanal; //Horario que contien las salas donde se proyectará la película 
 };
 
+template <typename T>
 struct Catalogo 
 {
-    Funcion funcion; //El tipo de información que tendría el catalogo sería las funciones que tiene el cine 
-    Catalogo * sigFuncion; //Opuntador a la sig. función 
+    T funcion; //El tipo de información que tendría el catalogo sería las funciones que tiene el cine 
+    Catalogo <T> * sigFuncion; //Opuntador a la sig. función 
 };
-
+    
+template <typeName T>
 struct Cine 
 {
-    Catalogo * cabeza;
+    Catalogo <T> * cabeza;
     int tam; 
 };
