@@ -41,7 +41,7 @@ struct Lista
 };
 
 //----------------------------------------------configuracionInicial------------------------------------------------------
-// Es la configuración inicial de todo el sistema, es decir la configuración de las salas, de las sillas y de las funciones 
+// Es la configuración inicial de todo el sistema, es decir, la configuración de las salas, de las sillas y de las funciones 
 // Esta configuración inical se debe hacer desde un archivo 
 
 template <typename T>
@@ -50,7 +50,7 @@ void configuracionInicial (Lista <T> * lista)
                                             
 //-------------------------------------------------configuracion-----------------------------------------------------
 //Recibo la lista de la sección que deseo modificar, es decir, si deseo modificar las salas, las silla o las funciones
-//Estas configurciones se tienen que guardar en un mismo archovo, es decir "Configuracion.txt"
+//Estas configurciones se tienen que guardar en un mismo archovo, es decir, "Configuracion.txt"
 //La función retorna TRUE en caso de que la modificación se exitosa, en caso contrario, retorna FALSE
 
 template <typename T>
