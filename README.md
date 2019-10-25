@@ -27,15 +27,15 @@ struct Funcion
 };
 
 template <typename T>
-struct Catalogo 
+struct Nodo
 {
     T funcion; //El tipo de información que tendría el catalogo sería las funciones que tiene el cine 
-    Catalogo <T> * sigFuncion; //Opuntador a la sig. función 
+    Nodo <T> * sigFuncion; //Opuntador a la sig. función 
 };
     
 template <typeName T>
-struct Cine 
+struct Lista 
 {
-    Catalogo <T> * cabeza;
+    Nodo <T> * cabeza;
     int tam; 
 };
