@@ -45,7 +45,7 @@ struct Lista
 // Esta configuración inical se debe hacer desde un archivo 
 
 template <typename T>
-void configuracionInicial (Lista <T> * lista) 
+void configuracionInicial (sLista <T> * lista) 
      
                                             
 //-------------------------------------------------configuracion-----------------------------------------------------
