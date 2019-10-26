@@ -43,9 +43,9 @@ struct Lista
 //----------------------------------------------configuracionInicial------------------------------------------------------
 // Es la configuración inicial de todo el sistema, es decir, la configuración de las salas, de las sillas y de las funciones 
 // Esta configuración inical se debe hacer desde un archivo 
+//
 
-template <typename T>
-void configuracionInicial (sLista <T> * lista) 
+void configuracionInicial (sLista * listaCine) 
      
                                             
 //-------------------------------------------------configuracion-----------------------------------------------------
