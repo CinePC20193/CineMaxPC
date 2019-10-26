@@ -85,4 +85,9 @@ bool eliminar (Lista <T> * lista, T infoEliminar)
 //Al final se crearía un archivo "Tiquete.txt" donde se vea el nombre de la película el horario en el que se va a presentar y en la sala donde se va a presentar 
 
 void genTiquete (char* nomPelicula, int proyeccion, sLista <sSala> * listaSala)
-            
+
+
+//----------------------------------------------------color--------------------------------------------------------
+//Recibe un número que está establecido en el compilador para generar un fondo con un color y un texto con otro color (predeterminados en una tabla con 256 combinaciones)
+
+int color (int num)
