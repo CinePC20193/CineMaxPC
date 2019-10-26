@@ -98,3 +98,148 @@ int color (int num)
 //La función permite leer un archivo HTML que contendrá la configuración de una página web, que permitirá visualizar las funciones que se proyectaran en la semana 
 
 void consultarCartelera()
+
+
+
+
+
+
+
+
+
+
+//CÓDIGO
+int color (int num)
+{
+    SetConsoleTextAttribute (GetStdHandle(STD_OUTPUT_HANDLE), num);
+}
+
+void imprimirHorario (char **horario, int sala)
+{
+     color(6);
+	 cout << "\tProyecciones para la sala " << sala << endl;
+	 cout << endl << endl;
+	 color(8);
+	 cout << "  L  M  W  J  V  S  D\n";
+	 cout << "  "
+	      << "1"
+	      << " ";
+	 cout << " "
+	      << "2"
+	      << " ";
+	 cout << " "
+	      << "3"
+	      << " ";
+	 cout << " "
+	      << "4"
+	      << " ";
+	 cout << " "
+	      << "5" << endl;
+	 for (int z = 0; z < 5; z++) 
+	 {
+		 for (int r = 0; r < 7; r++) 
+		 {
+		     if ((*(*(horario+i)+j))== '-')
+			 {
+			     color (170);
+			     cout << (*(*(horario+i)+j);
+				 color (7);
+			 }
+			 else if ((*(*(horario+i)+j))== 'X')
+			 {
+			     color (204);
+			     cout << (*(*(horario+i)+j);
+				 color (7);
+			 }
+		 }
+		 cout << endl;
+	 }
+	color(7); //Color del texto final
+}
+
+sFuncion crear_pelicula (int cantSalas, sLista <sSala> *salas) 
+{
+     sFuncion nueva;
+     nueva.nombrePelicula = new char [50];
+ 	 nueva.duracionCartelera = new char [2]; //Cantidad en días
+	 nueva.duracionPelicula = new char [8]; //Formato HH:MM:SS
+	 nueva.numSalas = new int [cantSalas];
+	 int num, x, proy, dia;
+	 char rta;
+
+     cout << "Ingrese el nombre de la pel" << char (161) << "cula nueva\n";
+	 cin >> nueva.nombrePelicula;
+	 cout << "Ingrese la duraci" << char(162) << "n (en d" << char (161) << "as) de la pel" << char (161) << "cula en cartelera\n";
+	 cin >> nueva.duracionCartelera;
+ 	 cout << "Ingrese la duraci" << char(162) << "n (formato HH:MM:SS) de la pel" << char (161) << "cula\n";
+	 cin >> nueva.duracionPelicula;
+     cout << "Ingrese la cantidad de salas a utilizar para presentar la pel" << char (161) << "cula "  << nueva.nombrePelicula << endl;
+	 cin >> num;
+	 if (num < cantSalas)
+	 {
+	     cout << "A continuaci" << char(162) << "n, ingrese los n" << char (163) << "meros de las salas y horarios donde se proyectar" << char (160) << " la pel" << char (161) << "cula " << nueva.nombrePelicula;
+	     for (int i=0; i<num; i++)
+	     {
+	         cout << "Sala ";
+	         cout << char(175) << " ";
+		     cin >> x;
+		     if ((x < cantSalas) && (x > 0))
+		     {
+		         cout << "Las proyecciones disponibles para la sala " << x << " aparecen a continuaci" << char(162) << "n resaltadas en color verde: ";
+				 sNodo <sSala> *aux = salas->cab;
+				 while (aux != NULL)
+				 {
+				     if (((aux->info).numSala) == x)
+					 {
+			             imprimirHorario (((aux->info).proyecciones), x);
+					 }
+					 aux = aux->sig;
+				 }
+			     cout << "Ingrese 's' si desea que la pel" << char (161) << "cula " << nueva.nombrePelicula <<  " se proyecte en la sala " << x << endl;
+			     cin >> rta;
+			     if ((rta=='s')||(rta=='S'))
+			     {
+		             *(nueva.numSalas+i) = x;
+				     cout << "¿En qu" << char (130) << " proyecci" << char(162) << "n desea presentar la pel" << char (161) << "cula " << nueva.nombrePelicula << "?\n";
+				     cout << "   Elija un n" << char (163) << "mero:\n";
+				     cout << "   1. 09:00 a.m. - 11:00 a.m.\n";
+				     cout << "   2. 12:00 p.m. - 02:00 p.m.\n";
+				     cout << "   3. 03:00 p.m. - 05:00 p.m.\n";
+				     cout << "   4. 06:00 p.m. - 08:00 p.m.\n";
+				     cout << "   5. 08:00 p.m. - 10:00 p.m.\n";
+				     cin >> proy;
+				     cout << "¿Qu" << char (130) << " d" << char (161) << "a de la semana desea presentar la pel" << char (161) << "cula " << nueva.nombrePelicula << "?\n";
+					 cout << "   Elija un n" << char (163) << "mero:\n";
+					 cout << "   1 = Lunes\n";
+					 cout << "   2 = Martes\n";
+					 cout << "   3 = Mi" << char (130) << "rcoles\n";
+					 cout << "   4 = Jueves\n";
+					 cout << "   5 = Viernes\n";
+					 cout << "   6 = S" << char (160) << "bado\n";
+					 cout << "   7 = Domingo\n";
+					 cin >> dia;
+					 //------------------------------------------------------Guardar en *(*(proyecciones+proy)+dia) una X para quitar disponibilidad
+					 //------------------------------------------------------Evaluar posibilidad de proyección inválida
+			     }
+			     else
+			     {
+			         cout << "La pel" << char (161) << "cula no se proyectar" << char (160) << " en la sala " << x << endl;
+				     i--;
+			     }
+		     }
+		     else
+		     {
+		         cout << "N" << char (163) << "mero de sala inv" << char (160) << "lido\n";
+			     i--;
+		     }
+	     }
+	 }
+	 else
+   	 {
+	     color (12);
+	     cout << "N" << char (163) << "mero para la cantidad de salas inv" << char (160) << "lido\n";
+	     cout << "Recuerde que debe ser un n" << char (163) << "mero menor o igual a " << cantSalas << endl;
+	     color (7);
+	 }
+	//LIBERAR MEMORIA
+}
