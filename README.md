@@ -85,3 +85,10 @@ void adicionar (Lista <T> * lista, T infoNueva)
 
 template <typename T>
 bool eliminar (Lista <T> * lista, T infoEliminar)
+            
+            
+//-----------------------------------------------color----------------------------------------------------------------
+//Recibe un número establecido en el compilador para un color de fondo y letra determinados
+//Realiza el cambio de color en fondo y pantalla durante la ejecución del programa
+int color (int num)
+
