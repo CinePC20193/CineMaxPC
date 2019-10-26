@@ -4,39 +4,39 @@
 
 using namespace std;
 
-struct Silla
+struct sSilla
 {
-    int numeroSilla; //A20, J8, ....
-    char * categoria; //Si la silla es general o preferencial
-    bool disponibilidad;  //Si la silla ya esta ocupada (TRUE O FALSE)
+    int numSilla; //A20, J8, ....
+    char * cat; //Si la silla es general o preferencial
+    bool dispo;  //Si la silla ya esta ocupada (TRUE O FALSE)
 };
 
-struct Sala
+struct sSala
 {
-    int numeroSala; // Sala 1, Sala 2, Sala 3, ....
-    int numeroSillas; // Numero de Silla que tiene la sala
+    int numSala; // Sala 1, Sala 2, Sala 3, ....
+    int numSillas; // Numero de Silla que tiene la sala
     Silla ** sillas; // Matriz de la sillas 
 };
 
-struct Funcion
+struct sFuncion
 {
-    char * nombrePelicula; //Malefica, La Vida Secreta de Tres Hackers, etc 
-    char * duracionCartelera; //Cuanto durará en cartelera
-    char * duracionPelicula; //2h30min, 1:30, etc
+    char * nomPelicula; //Malefica, La Vida Secreta de Tres Hackers, etc 
+    char * durCartelera; //Cuanto durará en cartelera
+    char * durPelicula; //2h30min, 1:30, etc
     Sala *** horarioSemanal; //Horario que contien las salas donde se proyectará la película 
 };
 
 template <typename T>
-struct Nodo
+struct sNodo
 {
-    T informacion;
-    Nodo <T> * siguiente; 
+    T info;
+    Nodo <T> * sig; 
 };
     
 template <typeName T>
 struct Lista 
 {
-    Nodo <T> * cabeza;
+    Nodo <T> * cab;
     int tam; 
 };
 
