@@ -9,11 +9,13 @@ Descripción: Código para la administración de un cine con salas multiplex,
 que permite la venta de boletas para distintas funciones. */
 
 #include <math.h>
+#include <conio.h>
 #include <iomanip>
-#include <fstream>
+#include <fstream>         
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
+#include <windows.h>
 #include "listas.cpp"
 
 using namespace std;
@@ -91,3 +93,8 @@ void genTiquete (char* nomPelicula, int proyeccion, sLista <sSala> * listaSala)
 //Recibe un número que está establecido en el compilador para generar un fondo con un color y un texto con otro color (predeterminados en una tabla con 256 combinaciones)
 
 int color (int num)
+
+//----------------------------------------------------consultaCartelera---------------------------------------------
+//La función permite leer un archivo HTML que contendrá la configuración de una página web, que permitirá visualizar las funciones que se proyectaran en la semana 
+
+void consultarCartelera()
