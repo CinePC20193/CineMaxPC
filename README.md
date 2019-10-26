@@ -4,7 +4,7 @@
 
 using namespace std;
 
-struct sSilla
+struct sSilla 
 {
     int numSilla; //A20, J8, ....
     char * cat; //Si la silla es general o preferencial
