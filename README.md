@@ -28,12 +28,20 @@ struct sSilla
     bool dispo;/*Si la silla ya esta ocupada (TRUE O FALSE)*/
 };
 
+struct sProyecciones
+{ 
+    char * nomPelicula;/*nombre de la película*/
+    Lista <sSilla> * sillas; /*Sillas que se tendrán en esa proyección*/
+    bool dispoProyeccion; /*Si el campo de la proyección está ocupado*/
+    char 
+};
+
 struct sSala
 {
     int numSala;/*Sala 1, Sala 2, Sala 3, ....*/
     int numSillas;/* Numero de Silla que tiene la sala*/
-    Lista<sSilla> * sillas;/*Matriz de la sillas*/
-    char ** proyecciones; /*Nombre de las películas que se van a propyectar en es sala*/
+    Lista<sSilla> * sillas;/*Matriz de la sillas predterminadas (siempre están)*/
+    sProyecciones ** proyecciones; /*Nombre de las películas que se van a propyectar en sala y las sillas en cada función*/
 };
 
 struct sFuncion
@@ -41,7 +49,7 @@ struct sFuncion
     char * NomPelicula;/*Malefica, La Vida Secreta de Tres Hackers, etc*/
     char * durCarte;/*Cuanto durará en cartelera*/
     char * durPeli;/*2h30min, 1:30, etc*/
-    int * numSalas; /*Numero de las salas donde se va a proyectar la película*/
+    sSala ** numSalas; /*Vector de apuntadores a salas, son las salas donde se proyectará la película*/
 };
 
 //----------------------------------------------configuracionInicial------------------------------------------------------
@@ -49,7 +57,7 @@ struct sFuncion
 // Esta configuración inical se debe hacer desde un archivo 
 //En el archivo de "ConfiguraciónInicial.txt" voy a dividir sel archivo por secciones (1. Función, 2.Sala, 3.Silla)
 
-void configuracionInicial (sLista * listaCine) 
+void configuracionInicial (Lista <sFuncion> * listaCine) 
 
                                             
 //-------------------------------------------------configuracion-----------------------------------------------------
@@ -61,7 +69,7 @@ void configuracionInicial (sLista * listaCine)
 //La función retorna TRUE en caso de que la modificación se exitosa, en caso contrario, retorna FALSE
 
 template <typename T>
-bool configuracion (sLista <T> * listaModif, sLista <T> * listaGrande)
+bool configuracion (Lista <T> * listaModif, Lista <T> * listaGrande)
 
 
 //--------------------------------------------------adicionar---------------------------------------------------------
@@ -86,7 +94,7 @@ bool eliminar (Lista <T> * lista, T infoEliminar)
 //Buscamos la sala que cumple con las dos condiciones, es decir, que tenga esa película en ese número de proyección, en la matriz que se tiene de proyecciones en la lista de salas
 //Al final se crearía un archivo "Tiquete.txt" donde se vea el nombre de la película el horario en el que se va a presentar y en la sala donde se va a presentar 
 
-void genTiquete (char* nomPelicula, int proyeccion, sLista <sSala> * listaSala)
+void genTiquete (char* nomPelicula, int proyeccion, Lista <sSala> * listaSala)
 
 
 //----------------------------------------------------color--------------------------------------------------------
@@ -100,13 +108,34 @@ int color (int num)
 void consultarCartelera()
 
 
+//-----------------------------------------------------consultaSala--------------------------------------------------
+//La función recibe el nombre de una película
+//Dado este nombre, el sistema muestra en pantalla las salas y las horas en que se presenta
+
+void consultaSala (char * nomPelicula)
 
 
+//-----------------------------------------------------consultaSilla-------------------------------------------------
+//La función recibe la hora, el numero de la sala y la lista de las salas
+//Teniendo los datos de la hora y de la sala, el sistema muestra en pantalla las lista de sillas disponibles 
+//Lo que se muestra en pantalla va a ser una matriz donde se mostrará el color verde en las secciones donde hay sillas disponibles y rojo en el caso contrario
+
+void consultaSilla (int numSala, char * hora, Lista <sSala> * salas)
 
 
+//-----------------------------------------------------consultaPersonas--------------------------------------------
+//La función recibe la fecha de inicio y la fecha final (dd/mm/aa) y la lista general del cine 
+//La función va a retornar un entero, que sería el número de personas en ese rango de tiempo dado
+//En la función se va a usar un archivo que esta en el computador que contiene la fecha, la cantidad de personas que fueron en esa fecha y la cantidad de ganancias en esa fecha
 
+double consultaPersonas (char * fecInicio, char * fecFinal, Lista <sFuncion> * listaCine)
+	
 
+//---------------------------------------------------- consultaGanancia-------------------------------------------
+// La función recibe una fecha de inicio y una fecha final y la lista general de cine 
+//En la función se va a usar un archivo que esta en el computador que contiene la fecha, la cantidad de personas que fueron en esa fecha y la cantidad de ganancias en esa fecha
 
+double consultaGanancia (char * fecInicial, char * fecFinal, Lista <sFuncion> * listaCine)
 
 //CÓDIGO
 int color (int num)
