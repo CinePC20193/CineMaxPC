@@ -136,6 +136,21 @@ double consultaPersonas (char * fecInicio, char * fecFinal, Lista <sFuncion> * l
 //En la función se va a usar un archivo que esta en el computador que contiene la fecha, la cantidad de personas que fueron en esa fecha y la cantidad de ganancias en esa fecha
 
 double consultaGanancia (char * fecInicial, char * fecFinal, Lista <sFuncion> * listaCine)
+	
+
+//----------------------------------------------------imprimirHorario--------------------------------------------
+//La función recibe la matriz de proyecciones y el numero de la sala 
+//La función muesta el horario de proyecciones que va a tener la sala durante una semana (domingo a domigo)
+
+void imprimirHorario (sProyecciones ** proyecciones, int sala) 
+
+//----------------------------------------------------imprimirSillas----------------------------------------------
+//La función recibe la lista de las sillas que se quiere imprimir y la sala de la lista de sillas 
+//La función muestra la matriz de sillas, cada silla tendrá un respectivo color, si está color verde significa que la silla está disponible, si está en rojo la silla no está disponible 
+
+void imprimirSillas (Lista <sSillas> * sillas, int sala)
+	
+
 
 //CÓDIGO
 int color (int num)
