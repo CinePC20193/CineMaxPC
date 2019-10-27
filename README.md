@@ -33,7 +33,6 @@ struct sProyecciones
     char * nomPelicula;/*nombre de la película*/
     Lista <sSilla> * sillas; /*Sillas que se tendrán en esa proyección*/
     bool dispoProyeccion; /*Si el campo de la proyección está ocupado*/
-    char 
 };
 
 struct sSala
